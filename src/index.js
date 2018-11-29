@@ -8,7 +8,9 @@ import * as serviceWorker from './serviceWorker';
 // import ReactBeginnersError from './ReactBeginnersError';
 
 
-import StateLessFunctionalComponent from './StateLessFunctionalComponent';
+// import StateLessFunctionalComponent from './StateLessFunctionalComponent';
+
+import ReVisitTicTacToe from './ReVisitTicTacToe';
 
 
 
@@ -23,7 +25,10 @@ import StateLessFunctionalComponent from './StateLessFunctionalComponent';
 // ReactDOM.render(<ReactBeginnersError/>, document.getElementById('root'));
 
 
-ReactDOM.render(<StateLessFunctionalComponent/>, document.getElementById('root'));
+// ReactDOM.render(<StateLessFunctionalComponent/>, document.getElementById('root'));
+
+
+ReactDOM.render(<ReVisitTicTacToe/>, document.getElementById('root'));
 
 
 
