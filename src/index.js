@@ -5,7 +5,11 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 // import Search from './Search';
 
-import ReactBeginnersError from './ReactBeginnersError';
+// import ReactBeginnersError from './ReactBeginnersError';
+
+
+import StateLessFunctionalComponent from './StateLessFunctionalComponent';
+
 
 
 
@@ -16,7 +20,11 @@ import ReactBeginnersError from './ReactBeginnersError';
 // ReactDOM.render(<Search/>, document.getElementById('root'));
 
 
-ReactDOM.render(<ReactBeginnersError/>, document.getElementById('root'));
+// ReactDOM.render(<ReactBeginnersError/>, document.getElementById('root'));
+
+
+ReactDOM.render(<StateLessFunctionalComponent/>, document.getElementById('root'));
+
 
 
 // If you want your app to work offline and load faster, you can change

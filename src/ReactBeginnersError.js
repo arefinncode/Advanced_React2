@@ -1,22 +1,18 @@
-
-
 // var React = require('react');
-import MouseTracker from "./MouseTracker";
+// import MouseTracker from "./MouseTracker";
 
-// var ButtonGroup = require('react-bootstrap/lib/ButtonGroup');
-// var Button = require('react-bootstrap/lib/Button');
-// var Form = require('react-bootstrap/lib/Form');
-// var FormGroup = require('react-bootstrap/lib/FormGroup');
-// var Well = require('react-bootstrap/lib/Well');
 
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import {ButtonGroup,Button,Form,FormGroup,Well} from "react-bootstrap";
+// import { BrowserRouter as Router, Route, Link, Redirect,NavLink,
+//     withRouter } from "react-router-dom";
+//
+// const Index = () => <h2>Home</h2>;
+// const About = () => <h2>About</h2>;
+// const Users = () => <h2>Users</h2>;
 
-// react-bootstrap
 
-export default class ReactBeginnersError extends React.Component {
+export default class ReactBeginnersError extends Component {
 
     constructor(props) {
         super(props);
@@ -24,15 +20,38 @@ export default class ReactBeginnersError extends React.Component {
         this.state = {
             x : 1
         };
+
+        // this.state = {date: new Date()};
+
+
+        // this.setState({
+        //     date: new Date()
+        // });
+
     }
 
+
+    // Error stateless function can't change state.
     _changeValue(newValue){
         // this.setState({newValue});
         this.setState({x:newValue});
+
+        // console.log("x is  : " ,this.state.x);
+
+       // <Route path="/about/" component={About} />
     }
 
     render() {
-        return <a style={{color:'green'}} onClick={this._changeValue.bind(2)}>Change Value</a>
+
+
+        return (
+            <div>
+                <h2>X is now:  {this.state.x}</h2>
+
+                <button style={{color:'green'}} onClick={this._changeValue.bind(2)}>Change Value</button>
+
+            </div>
+        )
     }
 
 }
