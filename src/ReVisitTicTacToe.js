@@ -9,6 +9,16 @@ import './tictactoe.css';
 function Square(props) {
     // props.onClick refering to the parents onClick
     {/*<Square/> passed with these 2 props: value, onClick*/}
+
+
+    {/*<Square*/}
+        {/*value={this.props.squares[i]}*/}
+        {/*onClick={() => this.props.onClick(i)}*/}
+    {/*/>*/}
+    // What was passed to Sqare functional component.
+
+
+    // Where props.value can be any of null, 'X' or 'O'
     return (
         <button className="square" onClick={props.onClick}>
             {props.value}
@@ -19,21 +29,21 @@ function Square(props) {
 class Board extends React.Component {
 
 
+    // squares={current.squares}
+    // onClick={(i) => this.handleClick(i)}
+    // This 2 props (squares [used in <Square/> component] and onClicks were passed from Game component.
     renderSquare(i) {
         return (
 
 
             // here: value, onClick these are properties of <Square/> component
+            // Game component > Board component > Square Component
             <Square
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
             />
         );
     }
-
-
-
-
 
     render() {
         return (
@@ -58,6 +68,7 @@ class Board extends React.Component {
     }
 }
 
+
 class Game extends React.Component {
     constructor(props) {
         super(props);
@@ -65,15 +76,25 @@ class Game extends React.Component {
             history: [{
                 squares: Array(9).fill(null)
             }],
-            stepNumber: 0, // indicate which step we’re currently viewing.
-            xIsNext: true
+            // history contains current Game status , whic have 9 squares, initially null.
+            stepNumber: 0, // indicate which step we’re currently In , initially 0.
+            xIsNext: true // X and O are 2 palyers , if not X then it is O.
         };
     }
 
     handleClick(i) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
+
         // removes future histories 0 to stepNumber.
         // const history = this.state.history;
+        // var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+        // console.log(animals.slice(2, 4));
+        // expected output: Array ["camel", "duck"]
+        // purpose: stores history for "Go To Move # A feature implementation.
+        // state contains history [] / array, which contains square objects {}, each squares object
+        // have 9 arrays
+        // history: [{            squares: Array(9).fill(null)        }],
+
         const current = history[history.length - 1];
         const squares = current.squares.slice();
         if (calculateWinner(squares) || squares[i]) {
@@ -118,11 +139,21 @@ class Game extends React.Component {
         const history = this.state.history;
         // const current = history[history.length - 1];
         const current = history[this.state.stepNumber];
+        // history contains every history from begining while
+        // current contains current situation check console
+        // log output.
+
+        console.log("current is: ",current);
 
 
         console.log("history is:",history);
 
         const winner = calculateWinner(current.squares);
+        // current is single history which have square object containing 9 arrays
+
+        // state contains history array [] , which contains square objects {}, each squares object
+        // have 9 arrays
+        // history: [{            squares: Array(9).fill(null)        }],
 
 
         // map(single_item, index)
@@ -151,6 +182,8 @@ class Game extends React.Component {
 
 
                     {/*handleClick is a method in this component/ i.e. <Game/>*/}
+                    {/*For current.squares check above*/}
+                    {/*i is the square upon whick click occurred*/}
                     <Board
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
@@ -167,7 +200,7 @@ class Game extends React.Component {
 }
 
 
-
+ // Game is the Top most parent component.
 export default Game;
 
 
