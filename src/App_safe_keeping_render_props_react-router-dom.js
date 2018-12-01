@@ -4,11 +4,10 @@ import logo from './logo.svg';
 import './App.css';
 import Home2 from './Home2';
 import RenderProps from './Renderprops';
-
-
-
 import { BrowserRouter as Router, Route, Link, Redirect,NavLink,
     withRouter } from "react-router-dom";
+
+
 
 const Index = () => <h2>Home</h2>;
 const About = () => <h2>About</h2>;

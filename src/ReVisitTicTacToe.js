@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import logo from './logo.svg';
 // import PropTypes from 'prop-types';
 import './tictactoe.css';
