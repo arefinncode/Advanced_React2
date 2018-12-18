@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+
 import Counter from './LifeCycleCounter';
 
-
+import './App.css';
 
 
 class LifeCycleEntry extends Component {
     render() {
         return (
- <div>
-     <Counter/>
- </div>
+            <div>
+                <Counter/>
+            </div>
         );
     }
 }
